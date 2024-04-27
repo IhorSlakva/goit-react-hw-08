@@ -1,10 +1,8 @@
-import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 // import ContactList from "./components/ContactList/ContactList";
 // import ContactForm from "./components/ContactForm/ContactForm";
-// import SearchBox from "./components/SearchBox/SearchBox";
-import { useEffect } from "react";
-import { fetchAllContacts } from "./redux/contacts/operations";
+// import SearchBox from "./components/SearchBox/SearchBox"
+import Loyout from "./components/Layout/Layout";
 import HomePage from "./pages/HomePage/HomePage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -12,14 +10,8 @@ import ContactsPage from "./pages/ContactsPage/ContactsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchAllContacts());
-  }, [dispatch]);
-
   return (
-    <div>
+    <Loyout>
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -29,7 +21,8 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
-    </div>
+    </Loyout>
+
     // <>
     //   <h1>Phonebook</h1>
     //   <ContactForm />
