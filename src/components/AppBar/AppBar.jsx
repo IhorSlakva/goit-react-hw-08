@@ -1,5 +1,13 @@
+import Navigation from "../Navigation/Navigation";
+import AuthNav from "../AuthNav/AuthNav";
+
 const AppBar = () => {
-  return <div>AppBar</div>;
+  return (
+    <div>
+      <Navigation />
+      <AuthNav />
+    </div>
+  );
 };
 
 export default AppBar;

@@ -12,15 +12,13 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 function App() {
   return (
     <Loyout>
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </Loyout>
 
     // <>

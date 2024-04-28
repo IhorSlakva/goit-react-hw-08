@@ -1,9 +1,9 @@
-import Navigation from "../Navigation/Navigation";
+import AppBar from "../AppBar/AppBar";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Navigation />
+      <AppBar />
       <main>{children}</main>
     </>
   );
