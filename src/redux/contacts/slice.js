@@ -4,6 +4,7 @@ import {
   apiDeleteContact,
   fetchAllContacts,
 } from "./operations";
+import { apiLogout } from "../auth/operations";
 
 const INITAL_STATE = {
   items: [],
@@ -30,11 +31,20 @@ const contactsSlice = createSlice({
           (contact) => contact.id !== action.payload.id
         );
       })
+      .addCase(apiLogout.fulfilled, (state) => {
+        state.user = {
+          name: null,
+          email: null,
+        };
+        state.token = null;
+        state.isLoggedIn = false;
+      })
       .addMatcher(
         isAnyOf(
           fetchAllContacts.pending,
           apiAddContact.pending,
-          apiDeleteContact.pending
+          apiDeleteContact.pending,
+          apiLogout.pending
         ),
         (state) => {
           state.loading = true;
@@ -45,7 +55,8 @@ const contactsSlice = createSlice({
         isAnyOf(
           fetchAllContacts.rejected,
           apiAddContact.rejected,
-          apiDeleteContact.rejected
+          apiDeleteContact.rejected,
+          apiLogout.rejected
         ),
         (state, action) => {
           state.loading = false;

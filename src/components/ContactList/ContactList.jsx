@@ -7,7 +7,7 @@ import {
   selectContactsError,
   selectContactsLoading,
 } from "../../redux/contacts/selectors";
-import { selectVisibleContacts } from "../../redux/filters/selectors";
+import { selectVisibleContacts } from "../../redux/contacts/selectors";
 
 const ContactList = () => {
   const filteredContacts = useSelector(selectVisibleContacts);

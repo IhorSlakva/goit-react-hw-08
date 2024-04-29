@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import css from "./UserMenu.module.css";
 import { apiLogout } from "../../redux/auth/operations";
-import { selectAuthUser } from "../../redux/auth/selectors";
+import { selectUser } from "../../redux/auth/selectors";
 
 const UserMenu = () => {
   const dispatch = useDispatch();
-  const user = useSelector(selectAuthUser);
+  const user = useSelector(selectUser);
 
   const handleClick = () => {
     dispatch(apiLogout());
