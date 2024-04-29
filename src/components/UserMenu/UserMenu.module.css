@@ -5,8 +5,13 @@
 }
 
 .btn {
-  background-color: royalblue;
+  background-color: rgba(24, 6, 140, 0.783);
   color: white;
   padding: 5px;
   border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: rgba(56, 26, 250, 0.769);
 }

@@ -10,7 +10,7 @@ const ContactsPage = () => {
       <Helmet>
         <title>Contacts Page</title>
       </Helmet>
-      <h2>Add new contact</h2>
+      <h2 className={css.heading}>Add new contact</h2>
       <ContactForm />
       <SearchBox />
       <ContactList />
